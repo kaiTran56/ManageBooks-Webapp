@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>ManagementBook</display-name>
+	<welcome-file-list>
+		<welcome-file>Show.jsp</welcome-file>
+	</welcome-file-list>
+
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
+
+	<servlet>
+		<servlet-name>FunctionServlet</servlet-name>
+		<servlet-class>com.Servlet.FunctionServlet</servlet-class>
+		<init-param>
+			<param-name>user</param-name>
+			<param-value>root</param-value>
+		</init-param>
+		<init-param>
+			<param-name>password</param-name>
+			<param-value>54935620tQ.</param-value>
+		</init-param>
+		<init-param>
+			<param-name>address</param-name>
+			<param-value>jdbc:mysql://localhost:3306/book</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FunctionServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Show</servlet-name>
+		<jsp-file>/Show.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Show</servlet-name>
+		<url-pattern>/showBook</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateForm</servlet-name>
+		<jsp-file>/WebContent/UpdateForm.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UpdateForm</servlet-name>
+		<url-pattern>/update</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>LoginForm</servlet-name>
+		<jsp-file>/WebContent/LoginForm.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginForm</servlet-name>
+		<url-pattern>/loginForm</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<jsp-file>/WebContent/LogoutFunction/Logout.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>WaitingServlet</servlet-name>
+		<servlet-class>com.Servlet.WaitingServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WaitingServlet</servlet-name>
+		<url-pattern>/waiting</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
